@@ -1,0 +1,240 @@
+ <!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel ="stylesheet" href="form.css">
+</head>
+<body>
+    
+        <div class="container">
+        <h1>Register Here!</h1>
+        <form name="registration" class="registartion-form">
+          <table>
+
+            <tr>
+              <td><label for="profile pic">Choose a profile Pic</label></td>
+              <td><input type="file" name="image"  accept ="image/*" id="imgfile" onchange="loadfile(event)"></td>
+              <p><img id="output" width="200" name="output"/></p>
+            </tr>
+            <tr>
+            <tr>
+              <td><label for="name">Name:</label></td>
+              <td><input type="text" name="uname" id="uname" placeholder="your name"></td>
+              <span id ="n" class="text-danger font-weight-bold"></span>
+            </tr>
+            <tr>
+              <td><label for="email">Email:</label></td>
+              <td><input type="text" name="email" id="email" placeholder="your email"></td>
+            </tr>
+            <tr>
+              <td><label for="password">Password:</label></td>
+              <td><input type="password" name="password" id="password"></td>
+            </tr>
+            <tr>
+              <td><label for="phoneNumber">Phone Number:</label></td>
+              <td><input type="number" name="phoneNumber" id="pnumber"></td>
+            </tr>
+            
+           
+            
+            
+            <tr>
+              <td><label for="birthday">DOB</label></td>
+              <td><input type="date" name="birth" id="birth"></td>
+            </tr>
+            <tr>
+              <td><label for="about">Address:</label></td>
+              <td><textarea name="address" id="address" placeholder="Enter your Address"></textarea></td>
+            </tr>
+            <tr>
+              <td colspan="2"><input type="submit" class="submit" value="Register" onclick="formValidation()" /></td>
+            </tr>
+          </table>
+        </form>
+      </div>
+      <script>
+
+        var loadfile = function (event){
+          var image = document.getElementById('output');
+          image.src = URL.createObjectURL(event.target.files[0]);
+        };
+      // Select all input elements for varification
+
+      function formValidation(){
+        login();
+      
+       const name = document.getElementById("uname").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        const phoneNumber = document.getElementById("pnumber").value;
+        const birthday = document.getElementById("birth").value;
+        const address = document.getElementById("address").value;
+        
+        console.log(name,email, password, phoneNumber, birthday, address);
+      }
+
+      document.querySelector('form').addEventListener('submit', (e)=>{
+        e.preventDefault();
+        formValidation()
+        
+      })
+       function login(){
+        const uname = document.getElementById("uname").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        const pnumber = document.getElementById("pnumber").value;
+        const birth = document.getElementById("birth").value;
+        const address = document.getElementById("address").value;
+
+        if (uname == '') {
+		alert('please Fill the user name');
+		return false;
+	}
+	if (uname.length < 3) {
+		alert('user name must be a 3 to 20 chracter only');
+		return false;
+	}
+	if (uname.length > 20) {
+	alert('user name must be a 3 to 20 chracter only')
+		return false;
+	}
+	if (!isNaN(uname)) {
+	alert(' Only Chracter Are allowed')
+		return false;
+	}
+
+  if (email == '') {
+		alert('please Fill the  Email id')
+		return false;
+	}
+
+  // if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(registration.email.value))
+  // {
+  //   return (true)
+  // }
+   
+	
+	if (password == '') {
+		alert('please Fill the  Password')
+		return false;
+	}
+    if (password.length <= 6) {
+		alert('password must be a 6 chracter')
+		return false;
+	}
+    
+    if (pnumber == '') {
+	alert('please Fill the phoneNumber')
+		return false;
+	}
+	if (birth == '') {
+		alert(' please Fill the DOB')
+		return false;
+	}
+        
+         
+} 
+       
+   
+    </script>
+</body>
+</html> 
+
+
+  -->
+
+
+
+
+
+
+
+
+
+
+
+  <html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Registration Form</title>
+	<link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+
+<body>
+  
+  
+
+<div class="wrapper">
+    <div class="title">
+      Registration Form
+    </div>
+
+    <form action="#">
+
+    <div class="form">
+        <div class="inputfield">
+            <!-- <label for="Profile Pic" id="button">Choose a Profile Pic</label> -->
+           
+
+            <div class="imgview"><img id="output" src="images/background.png" width="150"/> 
+                <span class="icon"><i class="fa-solid fa-pen"></i></span>
+                 <input type="file" accept="image/*" name="image" id="imgfile" onchange="loadfile(event)">
+                
+            </div>
+            
+           
+         </div>  
+       <div class="inputfield">
+          <label>UserName</label>
+          <input type="text" class="input" id="name"  placeholder="Name">
+          <span id="uname" class="text-danger font-weight-bold"></span>
+       </div>  
+       <div class="inputfield" >
+        <label>Email Address</label>
+        <input type="text" class="input"  id ="email" placeholder="Email" >
+        <span id="emails" class="text-danger font-weight-bold"></span>
+     </div> 
+        
+       <div class="inputfield" placeholder="Password">
+          <label>Password</label>
+          <input type="password" class="input" id="pass" type="password" placeholder="Password" value="">
+          <span id="passs" class="text-danger font-weight-bold"></span>
+       </div>  
+      
+       
+        
+      <div class="inputfield">
+          <label>Phone Number</label>
+          <input type="number" class="input" id="phone" placeholder="Phone">
+          <span id="phones" class="text-danger font-weight-bold"></span>
+       </div> 
+       <div class="inputfield" >
+        <label>DOB</label>
+        <input type="date" class="input" id="date">
+        <span id="dates" class="text-danger font-weight-bold"></span>
+      </div>
+
+      <center><button id="up" type="submit" onclick="validate()"  class="form-control btn btn-primary"> SignUp </button></center>
+      
+      
+      </form>
+       
+      </div>
+    </div>
+</div>	
+</form>
+<script src="signup.js">
+    
+    
+</script>
+
+	
+</body>
+
+</html>
